@@ -10,38 +10,22 @@ class DashboardController extends Controller
 {
     public function getUserCapsules($id = null){
         $capsules = Capsule::find($id);
-        $response = [];
-        $response["status"] = "success";
-        $response["payload"] = $capsules;
-
-        return json_encode($response, 200);
+        return $this->responseJSON($capsules);
     }
 
     public function getTotalCount($id = null){
         $capsulesCount = Capsule::where('user_id', $id)->count();
-        $response = [];
-        $response["status"] = "success";
-        $response["payload"] = $capsulesCount;
-
-        return json_encode($response, 200);
+        return $this->responseJSON($capsulesCount);
     }
 
     public function getWaitingCount($id = null){
         $capsulesCount = Capsule::where('user_id', $id)->where('is_revealed', 0)->count();
-        $response = [];
-        $response["status"] = "success";
-        $response["payload"] = $capsulesCount;
-
-        return json_encode($response, 200);
+        return $this->responseJSON($capsulesCount);
     }
 
     public function getPublicCount($id = null){
         $capsulesCount = Capsule::where('user_id', $id)->where('privacy_setting', 'public')->count();
-        $response = [];
-        $response["status"] = "success";
-        $response["payload"] = $capsulesCount;
-
-        return json_encode($response, 200);
+        return $this->responseJSON($capsulesCount);
     }
 
 }

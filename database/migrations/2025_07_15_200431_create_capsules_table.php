@@ -23,7 +23,6 @@ return new class extends Migration
             $table->decimal('gps_longitude', 11, 8)->nullable();
             $table->string('ip_address', 45)->nullable();
             $table->boolean('is_revealed')->default(false);
-            $table->dateTime('revealed_at')->nullable();
 
             $table->string('custom_color', 7)->nullable();
             $table->string('custom_emoji', 10)->nullable();

@@ -10,10 +10,6 @@ class ProfileController extends Controller
 {
     public function getUser($id = null){
         $User = User::find($id);
-        $response = [];
-        $response["status"] = "success";
-        $response["payload"] = $User;
-
-        return json_encode($response, 200);
+        return $this->responseJSON($User);
     }
 }
