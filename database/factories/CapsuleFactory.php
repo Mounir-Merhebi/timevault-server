@@ -27,13 +27,14 @@ class CapsuleFactory extends Factory
     {
         return [
             "user_id" => 1,
-            "title" => $this->faker->words(3, true),
-            "message" => $this->faker->paragraph,
+            "title" => $this->faker->realText(10),
+            "message" => $this->faker->realText(),
             "reveal_date" => $this->faker->dateTimeBetween('now', '+1 year'), 
             "privacy_setting" => $this->faker->randomElement(['public', 'private', 'unlisted']),
             "gps_latitude" => $this->faker->randomFloat(8, -90, 90),
             "gps_longitude" => $this->faker->randomFloat(8, -180, 180),
             "ip_address" => $this->faker->ipv4,
+            "location" => $this->faker->country,
             "is_revealed" => false, 
             "custom_color" => $this->faker->hexColor, 
             "custom_emoji" => $this->faker->emoji, 
@@ -42,7 +43,7 @@ class CapsuleFactory extends Factory
             "audio_file_url" => $this->faker->boolean ? 'audio/' . $this->faker->uuid . '.mp3' : null, 
             "text_note" => $this->faker->boolean ? $this->faker->text(500) : null, 
             "surprise_mode" => $this->faker->boolean, 
-            "mood" => $this->faker->word,
+            "mood" => $this->faker->realText(10),
             "unlisted_link_token" => $this->faker->boolean ? $this->faker->uuid : null, 
         ];
     }

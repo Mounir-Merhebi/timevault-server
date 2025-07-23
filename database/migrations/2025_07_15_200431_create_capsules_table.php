@@ -6,9 +6,6 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
         Schema::create('capsules', function (Blueprint $table) {
@@ -22,6 +19,7 @@ return new class extends Migration
             $table->decimal('gps_latitude', 10, 8)->nullable();
             $table->decimal('gps_longitude', 11, 8)->nullable();
             $table->string('ip_address', 45)->nullable();
+            $table->text('location');
             $table->boolean('is_revealed')->default(false);
 
             $table->string('custom_color', 7)->nullable();
@@ -41,10 +39,6 @@ return new class extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
-
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('capsules');

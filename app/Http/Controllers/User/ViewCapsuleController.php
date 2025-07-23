@@ -9,8 +9,14 @@ use App\Models\Capsule;
 class ViewCapsuleController extends Controller
 {
     public function getCapsule($id = null){
-        $capsules = Capsule::find($id);
-        return $this->responseJSON($capsules);
+        $capsule = Capsule::with('user:id,username')->find($id);
+        return $this->responseJSON($capsule);
     }
+
+    public function viewSharedCapsule($token)  {
+        $capsule = Capsule::with('user:id,username')->where('unlisted_link_token', $token)->first();
+        return $this->responseJSON($capsule);
+    }
+
 }
 
