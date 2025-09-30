@@ -59,3 +59,19 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+### User Screens (Web)
+
+| Landing Page                      | Dashboard                    |
+| ---------------------------------- | --------------------------------- |
+| ![Landing1](./assets/Landing.png) | ![Dashboard](./assets/dashboard.png) |
+
+| Dashboard Filters                      | Public Wall                    |
+| ---------------------------------- | --------------------------------- |
+| ![Filters](./assets/waiting.png) | ![Public Wall](./assets/wall.png) |
+
+| Create Capsule                     | User Profile                   |
+| ---------------------------------- | --------------------------------- |
+| ![create capsule](./assets/create.png) | ![Profile](./assets/profile.png) |
+
